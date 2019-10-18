@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  auth:
 
+  auth:
     build: auth/
     volumes:
       - /Users/shayan/Projects/StorageServer/static:/static
