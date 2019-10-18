@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  auth:
+
+    build: auth/
+    volumes:
+      - /Users/shayan/Projects/StorageServer/static:/static
+    ports:
+      - "5001:5001"
+
+  child:
+    build: upload/
+    volumes:
+      - /Users/shayan/Projects/StorageServer/static:/static
+    ports:
+      - "5000:5000"
+
+  redis:
+    image: redis
