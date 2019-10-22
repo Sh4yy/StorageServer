@@ -5,16 +5,27 @@ services:
   auth:
     build: auth/
     volumes:
-      - /Users/shayan/Projects/StorageServer/static:/static
+      - /Users/shayan/static:/static
     ports:
       - "5001:5001"
 
-  child:
+  upload_1:
     build: upload/
     volumes:
-      - /Users/shayan/Projects/StorageServer/static:/static
+      - /Users/shayan/static:/static
+
+  upload_2:
+    build: upload/
+    volumes:
+      - /Users/shayan/static:/static
+
+  nginx:
+    build: nginx/
+    volumes:
+      - /Users/shayan/static:/static
     ports:
-      - "5000:5000"
+      - "8080:80"
+    tty: true
 
   redis:
     image: redis

@@ -153,7 +153,7 @@ def upload_sign_url():
     })
 
 
-@app.route('/download/sign', methods=['POST'])
+@app.route('/download/sign_url', methods=['POST'])
 def down_sign_url():
 
     if not request.json:
